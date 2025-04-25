@@ -1,13 +1,16 @@
 ---
 - name: First Pull demo Ansible playbook
-hosts: localhost
-tasks: 
-     - name: print hello world
-     debug:
-         msg: "Hello World!......."
-     - name: print host name
-     debug:
-          var : ansible_hostname
-      - name: print Ubuntu version
+  hosts: localhost
+  connection: local
+  tasks: 
+    - name: print hello world
+      debug:
+        msg: "Hello World!......."
+
+    - name: print host name
+      debug:
+        var: ansible_hostname
+
+    - name: print Ubuntu version
       debug: 
-           var: ansible_distribution   
+        var: ansible_distribution
